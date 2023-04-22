@@ -2,8 +2,9 @@
 
 int main(void)
 {
-	char variable; // type of 'variable' is character
-	variable = 'A'; // set value of 'variable' is 'A'
-	printf("%d", variable); // Print ascii value of 'variable'. 'A' is 65
+	for (int i = 0; i < 10; i++)
+	{
+		printf("Hello, World!\n");
+	}
 	return 0;
 }
