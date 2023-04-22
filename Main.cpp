@@ -2,8 +2,8 @@
 
 int main(void)
 {
-	int variable; // type of 'variable' is integer
-	variable = 10; // set value of 'variable' is 10
-	printf("%d", variable); // Print value of 'variable'
+	char variable; // type of 'variable' is character
+	variable = 'A'; // set value of 'variable' is 'A'
+	printf("%c", variable); // Print value of 'variable'
 	return 0;
 }
