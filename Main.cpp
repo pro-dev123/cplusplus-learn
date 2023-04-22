@@ -1,14 +1,19 @@
 #include <stdio.h>
 
-void func();
+int n_sum(int n); // n for bigger or same as 0
 
 int main(void)
 {
-	func();
+	int sum;
+	sum = n_sum(10);
+
+	printf("%d", sum);
+
 	return 0;
 }
 
-void func()
+int n_sum(int n)
 {
-	printf("function!");
+	if (n == 0) return 0;
+	return n + n_sum(n - 1);
 }
