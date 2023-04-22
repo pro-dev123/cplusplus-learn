@@ -1,10 +1,14 @@
 #include <stdio.h>
 
+void func();
+
 int main(void)
 {
-	for (int i = 0; i < 10; i++)
-	{
-		printf("Hello, World!\n");
-	}
+	func();
 	return 0;
+}
+
+void func()
+{
+	printf("function!");
 }
