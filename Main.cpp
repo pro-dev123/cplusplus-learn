@@ -7,14 +7,16 @@ public:
 	
 	Entity() // constructor
 	{
+		std::cout << "Created Entity!" << std::endl;
+
 		X = 0.0f;
 		Y = 0.0f;
 	}
 
-	Entity(float x, float y)
+
+	~Entity()
 	{
-		X = x;
-		Y = y;
+		std::cout << "Destroyed Entity!" << std::endl;
 	}
 	
 	
@@ -32,29 +34,17 @@ public:
 	}
 };
 
-
-class Logger
+void Function()
 {
-public:
-	Logger() = delete;
+	Entity e;
+	e.Print();
 
-	static void Log()
-	{
-		std::cout << "LOG" << std::endl;
-	}
-};
-
+	e.~Entity();
+}
 
 int main()
 {
-	Entity e(10.0f, 5.0f);
-
-	// e.Init();
-	std::cout << e.X << std::endl;
-
-	e.Print();
-
-	Logger::Log();
+	Function();
 
 	std::cin.get();
 
