@@ -1,40 +1,46 @@
-/*
-Make Calculator!
-*/
+#include <iostream>
 
-#include <stdio.h>
-#include <string>
-// #include <string.h>
 
-std::string int_to_string(int x);
+class Entity
+{
+public:
+	float X, Y;
 
-std::string substring(std::string str, int start, int end);
+	void Print()
+	{
+		std::cout << X << ", " << Y << std::endl;
+	}
+};
 
-int calculate(std::string str);
+class Player : public Entity // Inheritance
+{
+public:
+	char* Name;
+
+	void Hello()
+	{
+		std::cout << "Hello, " << Name << "!" << std::endl;
+	}
+};
 
 int main()
 {
-	char str[101];
-}
+	Entity e = { 1.0f, 2.0f };
+	e.Print();
 
-int calculate(std::string str)
-{
-	// () bracket
+	Player p;
 
-	int last_opened = 0;
-	for (int i = 0; i < str.length(); i++)
-	{
-		if (str[i] == '(')
-		{
-			last_opened = i;
-		}
-		else if (str[i] == ')')
-		{
-			std::string head = substring(str, 0, last_opened - 1);
-			std::string bracket = substring(str, last_opened + 1, i - 1);
-			std::string tail = substring(str, i + 1, str.length());
+	p.X = 4.0f;
+	p.Y = 5.0f;
 
-			str = head + int_to_string(calculate(bracket)) + tail;
-		}
-	}
+	p.Name = (char*) "hi990103";
+
+	p.Print();
+	p.Hello();
+
+	std::cout << sizeof(e) << ", " << sizeof(p) << std::endl;
+
+	std::cin.get();
+
+	return 0;
 }
